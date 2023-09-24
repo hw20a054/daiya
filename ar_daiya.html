@@ -1,0 +1,975 @@
+<html>
+
+<head>
+  <title>three.js + ar.js</title>
+  <meta name="viewport" content="width=device-width, viewport-fit=cover, shrink-to-fit=no" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <canvas></canvas>
+  </div>
+  <!--❶ three.jsとAR.jsを読み込む-->
+  <script src="https://unpkg.com/three@0.127.0/build/three.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.3/three.js/build/ar.js"></script>
+  <script async>
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('canvas'),
+      antialias: true,
+      alpha: true
+    });
+    const camera = new THREE.PerspectiveCamera();
+    const scene = new THREE.Scene();
+    const markerRoot = new THREE.Group();
+    const arToolkitContext = new THREEx.ArToolkitContext({
+      cameraParametersUrl: './camera.dat', // ❷ camera.datを読み込む
+      detectionMode: 'mono'
+    });
+    const arToolkitSource = new THREEx.ArToolkitSource({
+      sourceType: 'webcam'
+    });
+    const arMarkerControl = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+      type: 'pattern',
+      patternUrl: 'pattern.patt' // ❸ pattern.pattを読み込む
+    });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    window.addEventListener('resize', handleResize, {
+      passive: true
+    });
+
+    arToolkitContext.init(() => {
+      camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
+    });
+
+    arToolkitSource.init(() => {
+      document.querySelector('.wrapper').appendChild(arToolkitSource.domElement); // ❹ videoタグを.wrapper配下に移動させる
+      setTimeout(handleResize, 400); // ❺ リサイズイベントを一度発火させる
+    });
+
+    scene.add(markerRoot);
+
+    let degree = 1;
+    let degree1 = 1;
+    let degree2 = 1;
+    let degree3 = 1;
+    let degree4 = 1;
+    let degree5 = 1;
+    let degree6 = 1;
+    let degree7 = 1;
+    let degree8 = 1;
+    let degree9 = 1;
+    let degree10 = 1;
+    let degree11 = 1;
+    let degree12 = 1;
+    let degree13 = 1;
+    let degree14 = 1;
+    let degree15 = 1;
+    let degree16 = 1;
+    let degree17 = 1;
+    let degree18 = 1;
+    let degree19 = 1;
+    let degree20 = 1;
+    let degree21 = 1;
+    let degree22 = 1;
+    let degree23 = 1;
+    let degree24 = 1;
+    let degree25 = 1;
+    let degree26 = 1;
+    let degree27 = 1;
+    let degree28 = 1;
+    let degree29 = 1;
+    let degree30 = 1;
+    let degree31 = 1;
+    let degree32 = 1;
+    let degree33 = 1;
+    let degree34 = 1;
+    let degree35 = 1;
+
+    let radius = 0.05;
+
+
+    const box_geometry = new THREE.SphereGeometry(0.05, 32, 16);
+    const box_material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const box = new THREE.Mesh(box_geometry, box_material);
+    box.position.set(0, 0, 1);
+    markerRoot.add(box);
+    const box1 = new THREE.Mesh(box_geometry, box_material);
+    box1.position.set(0, 0, 1);
+    markerRoot.add(box1);
+    const box2 = new THREE.Mesh(box_geometry, box_material);
+    box2.position.set(0, 0, 1);
+    markerRoot.add(box2);
+    const box3 = new THREE.Mesh(box_geometry, box_material);
+    box3.position.set(0, 0, 1);
+    markerRoot.add(box3);
+    const box4 = new THREE.Mesh(box_geometry, box_material);
+    box4.position.set(0, 0, 1);
+    markerRoot.add(box4);
+    const box5 = new THREE.Mesh(box_geometry, box_material);
+    box5.position.set(0, 0, 1);
+    markerRoot.add(box5);
+    const box6 = new THREE.Mesh(box_geometry, box_material);
+    box6.position.set(0, 0, 1);
+    markerRoot.add(box6);
+    const box7 = new THREE.Mesh(box_geometry, box_material);
+    box7.position.set(0, 0, 1);
+    markerRoot.add(box7);
+    const box8 = new THREE.Mesh(box_geometry, box_material);
+    box8.position.set(0, 0, 1);
+    markerRoot.add(box8);
+    const box9 = new THREE.Mesh(box_geometry, box_material);
+    box9.position.set(0, 0, 1);
+    markerRoot.add(box9);
+    const box10 = new THREE.Mesh(box_geometry, box_material);
+    box10.position.set(0, 0, 1);
+    markerRoot.add(box10);
+    const box11 = new THREE.Mesh(box_geometry, box_material);
+    box11.position.set(0, 0, 1);
+    markerRoot.add(box11);
+    const box12 = new THREE.Mesh(box_geometry, box_material);
+    box12.position.set(0, 0, 1);
+    markerRoot.add(box12);
+    const box13 = new THREE.Mesh(box_geometry, box_material);
+    box13.position.set(0, 0, 1);
+    markerRoot.add(box13);
+    const box14 = new THREE.Mesh(box_geometry, box_material);
+    box14.position.set(0, 0, 1);
+    markerRoot.add(box14);
+    const box15 = new THREE.Mesh(box_geometry, box_material);
+    box15.position.set(0, 0, 1);
+    markerRoot.add(box15);
+    const box16 = new THREE.Mesh(box_geometry, box_material);
+    box16.position.set(0, 0, 1);
+    markerRoot.add(box16);
+    const box17 = new THREE.Mesh(box_geometry, box_material);
+    box17.position.set(0, 0, 1);
+    markerRoot.add(box17);
+    const box18 = new THREE.Mesh(box_geometry, box_material);
+    box18.position.set(0, 0, 1);
+    markerRoot.add(box18);
+    const box19 = new THREE.Mesh(box_geometry, box_material);
+    box19.position.set(0, 0, 1);
+    markerRoot.add(box19);
+    const box20 = new THREE.Mesh(box_geometry, box_material);
+    box20.position.set(0, 0, 1);
+    markerRoot.add(box20);
+    const box21 = new THREE.Mesh(box_geometry, box_material);
+    box21.position.set(0, 0, 1);
+    markerRoot.add(box21);
+    const box22 = new THREE.Mesh(box_geometry, box_material);
+    box22.position.set(0, 0, 1);
+    markerRoot.add(box22);
+    const box23 = new THREE.Mesh(box_geometry, box_material);
+    box23.position.set(0, 0, 1);
+    markerRoot.add(box23);
+    const box24 = new THREE.Mesh(box_geometry, box_material);
+    box24.position.set(0, 0, 1);
+    markerRoot.add(box24);
+    const box25 = new THREE.Mesh(box_geometry, box_material);
+    box25.position.set(0, 0, 1);
+    markerRoot.add(box25);
+    const box26 = new THREE.Mesh(box_geometry, box_material);
+    box26.position.set(0, 0, 1);
+    markerRoot.add(box26);
+    const box27 = new THREE.Mesh(box_geometry, box_material);
+    box27.position.set(0, 0, 1);
+    markerRoot.add(box27);
+    const box28 = new THREE.Mesh(box_geometry, box_material);
+    box28.position.set(0, 0, 1);
+    markerRoot.add(box28);
+    const box29 = new THREE.Mesh(box_geometry, box_material);
+    box29.position.set(0, 0, 1);
+    markerRoot.add(box29);
+    const box30 = new THREE.Mesh(box_geometry, box_material);
+    box30.position.set(0, 0, 1);
+    markerRoot.add(box30);
+    const box31 = new THREE.Mesh(box_geometry, box_material);
+    box31.position.set(0, 0, 1);
+    markerRoot.add(box31);
+    const box32 = new THREE.Mesh(box_geometry, box_material);
+    box32.position.set(0, 0, 1);
+    markerRoot.add(box32);
+    const box33 = new THREE.Mesh(box_geometry, box_material);
+    box33.position.set(0, 0, 1);
+    markerRoot.add(box33);
+    const box34 = new THREE.Mesh(box_geometry, box_material);
+    box34.position.set(0, 0, 1);
+    markerRoot.add(box34);
+    const box35 = new THREE.Mesh(box_geometry, box_material);
+    box35.position.set(0, 0, 1);
+    markerRoot.add(box35);
+
+
+
+
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const rad = degree * Math.PI / 180;
+      const rad1 = degree1 * Math.PI / 180;
+      const rad2 = degree2 * Math.PI / 180;
+      const rad3 = degree3 * Math.PI / 180;
+      const rad4 = degree4 * Math.PI / 180;
+      const rad5 = degree5 * Math.PI / 180;
+      const rad6 = degree6 * Math.PI / 180;
+      const rad7 = degree7 * Math.PI / 180;
+      const rad8 = degree8 * Math.PI / 180;
+      const rad9 = degree9 * Math.PI / 180;
+      const rad10 = degree10 * Math.PI / 180;
+      const rad11 = degree11 * Math.PI / 180;
+      const rad12 = degree12 * Math.PI / 180;
+      const rad13 = degree13 * Math.PI / 180;
+      const rad14 = degree14 * Math.PI / 180;
+      const rad15 = degree15 * Math.PI / 180;
+      const rad16 = degree16 * Math.PI / 180;
+      const rad17 = degree17 * Math.PI / 180;
+      const rad18 = degree18 * Math.PI / 180;
+      const rad19 = degree19 * Math.PI / 180;
+      const rad20 = degree20 * Math.PI / 180;
+      const rad21 = degree21 * Math.PI / 180;
+      const rad22 = degree22 * Math.PI / 180;
+      const rad23 = degree23 * Math.PI / 180;
+      const rad24 = degree24 * Math.PI / 180;
+      const rad25 = degree25 * Math.PI / 180;
+      const rad26 = degree26 * Math.PI / 180;
+      const rad27 = degree27 * Math.PI / 180;
+      const rad28 = degree28 * Math.PI / 180;
+      const rad29 = degree29 * Math.PI / 180;
+      const rad30 = degree30 * Math.PI / 180;
+      const rad31 = degree31 * Math.PI / 180;
+      const rad32 = degree32 * Math.PI / 180;
+      const rad33 = degree33 * Math.PI / 180;
+      const rad34 = degree34 * Math.PI / 180;
+      const rad35 = degree35 * Math.PI / 180;
+
+      if (Math.cos(rad) >= 0 && Math.sin(rad) >= 0) {
+        box.position.x += 0.01;
+        box.position.z -= 0.02;
+      }
+      if (Math.cos(rad) < 0 && Math.sin(rad) >= 0) {
+        box.position.x -= 0.01;
+        box.position.z -= 0.02;
+      }
+      if (Math.cos(rad) < 0 && Math.sin(rad) < 0) {
+        box.position.x -= 0.01;
+        box.position.z += 0.02;
+      }
+      if (Math.cos(rad) >= 0 && Math.sin(rad) < 0) {
+        box.position.x += 0.01;
+        box.position.z += 0.02;
+      }
+      if (degree > 10) {
+        if (Math.cos(rad1) >= 0 && Math.sin(rad1) >= 0) {
+          box1.position.x += 0.01;
+          box1.position.z -= 0.02;
+        }
+        if (Math.cos(rad1) < 0 && Math.sin(rad1) >= 0) {
+          box1.position.x -= 0.01;
+          box1.position.z -= 0.02;
+        }
+        if (Math.cos(rad1) < 0 && Math.sin(rad1) < 0) {
+          box1.position.x -= 0.01;
+          box1.position.z += 0.02;
+        }
+        if (Math.cos(rad1) >= 0 && Math.sin(rad1) < 0) {
+          box1.position.x += 0.01;
+          box1.position.z += 0.02;
+        }
+        degree1 += 1;
+      }
+      if (degree > 20) {
+        if (Math.cos(rad2) >= 0 && Math.sin(rad2) >= 0) {
+          box2.position.x += 0.01;
+          box2.position.z -= 0.02;
+        }
+        if (Math.cos(rad2) < 0 && Math.sin(rad2) >= 0) {
+          box2.position.x -= 0.01;
+          box2.position.z -= 0.02;
+        }
+        if (Math.cos(rad2) < 0 && Math.sin(rad2) < 0) {
+          box2.position.x -= 0.01;
+          box2.position.z += 0.02;
+        }
+        if (Math.cos(rad2) >= 0 && Math.sin(rad2) < 0) {
+          box2.position.x += 0.01;
+          box2.position.z += 0.02;
+        }
+        degree2 += 1;
+      }
+      if (degree > 30) {
+        if (Math.cos(rad3) >= 0 && Math.sin(rad3) >= 0) {
+          box3.position.x += 0.01;
+          box3.position.z -= 0.02;
+        }
+        if (Math.cos(rad3) < 0 && Math.sin(rad3) >= 0) {
+          box3.position.x -= 0.01;
+          box3.position.z -= 0.02;
+        }
+        if (Math.cos(rad3) < 0 && Math.sin(rad3) < 0) {
+          box3.position.x -= 0.01;
+          box3.position.z += 0.02;
+        }
+        if (Math.cos(rad3) >= 0 && Math.sin(rad3) < 0) {
+          box3.position.x += 0.01;
+          box3.position.z += 0.02;
+        }
+        degree3 += 1;
+      }
+      if (degree > 40) {
+        if (Math.cos(rad4) >= 0 && Math.sin(rad4) >= 0) {
+          box4.position.x += 0.01;
+          box4.position.z -= 0.02;
+        }
+        if (Math.cos(rad4) < 0 && Math.sin(rad4) >= 0) {
+          box4.position.x -= 0.01;
+          box4.position.z -= 0.02;
+        }
+        if (Math.cos(rad4) < 0 && Math.sin(rad4) < 0) {
+          box4.position.x -= 0.01;
+          box4.position.z += 0.02;
+        }
+        if (Math.cos(rad4) >= 0 && Math.sin(rad4) < 0) {
+          box4.position.x += 0.01;
+          box4.position.z += 0.02;
+        }
+        degree4 += 1;
+      }
+      if (degree > 50) {
+        if (Math.cos(rad5) >= 0 && Math.sin(rad5) >= 0) {
+          box5.position.x += 0.01;
+          box5.position.z -= 0.02;
+        }
+        if (Math.cos(rad5) < 0 && Math.sin(rad5) >= 0) {
+          box5.position.x -= 0.01;
+          box5.position.z -= 0.02;
+        }
+        if (Math.cos(rad5) < 0 && Math.sin(rad5) < 0) {
+          box5.position.x -= 0.01;
+          box5.position.z += 0.02;
+        }
+        if (Math.cos(rad5) >= 0 && Math.sin(rad5) < 0) {
+          box5.position.x += 0.01;
+          box5.position.z += 0.02;
+        }
+        degree5 += 1;
+      }
+      if (degree > 60) {
+        if (Math.cos(rad6) >= 0 && Math.sin(rad6) >= 0) {
+          box6.position.x += 0.01;
+          box6.position.z -= 0.02;
+        }
+        if (Math.cos(rad6) < 0 && Math.sin(rad6) >= 0) {
+          box6.position.x -= 0.01;
+          box6.position.z -= 0.02;
+        }
+        if (Math.cos(rad6) < 0 && Math.sin(rad6) < 0) {
+          box6.position.x -= 0.01;
+          box6.position.z += 0.02;
+        }
+        if (Math.cos(rad6) >= 0 && Math.sin(rad6) < 0) {
+          box6.position.x += 0.01;
+          box6.position.z += 0.02;
+        }
+        degree6 += 1;
+      }
+      if (degree > 70) {
+        if (Math.cos(rad7) >= 0 && Math.sin(rad7) >= 0) {
+          box7.position.x += 0.01;
+          box7.position.z -= 0.02;
+        }
+        if (Math.cos(rad7) < 0 && Math.sin(rad7) >= 0) {
+          box7.position.x -= 0.01;
+          box7.position.z -= 0.02;
+        }
+        if (Math.cos(rad7) < 0 && Math.sin(rad7) < 0) {
+          box7.position.x -= 0.01;
+          box7.position.z += 0.02;
+        }
+        if (Math.cos(rad7) >= 0 && Math.sin(rad7) < 0) {
+          box7.position.x += 0.01;
+          box7.position.z += 0.02;
+        }
+        degree7 += 1;
+      }
+      if (degree > 80) {
+        if (Math.cos(rad8) >= 0 && Math.sin(rad8) >= 0) {
+          box8.position.x += 0.01;
+          box8.position.z -= 0.02;
+        }
+        if (Math.cos(rad8) < 0 && Math.sin(rad8) >= 0) {
+          box8.position.x -= 0.01;
+          box8.position.z -= 0.02;
+        }
+        if (Math.cos(rad8) < 0 && Math.sin(rad8) < 0) {
+          box8.position.x -= 0.01;
+          box8.position.z += 0.02;
+        }
+        if (Math.cos(rad8) >= 0 && Math.sin(rad8) < 0) {
+          box8.position.x += 0.01;
+          box8.position.z += 0.02;
+        }
+        degree8 += 1;
+      }
+      if (degree > 90) {
+        if (Math.cos(rad9) >= 0 && Math.sin(rad9) >= 0) {
+          box9.position.x += 0.01;
+          box9.position.z -= 0.02;
+        }
+        if (Math.cos(rad9) < 0 && Math.sin(rad9) >= 0) {
+          box9.position.x -= 0.01;
+          box9.position.z -= 0.02;
+        }
+        if (Math.cos(rad9) < 0 && Math.sin(rad9) < 0) {
+          box9.position.x -= 0.01;
+          box9.position.z += 0.02;
+        }
+        if (Math.cos(rad9) >= 0 && Math.sin(rad9) < 0) {
+          box9.position.x += 0.01;
+          box9.position.z += 0.02;
+        }
+        degree9 += 1;
+      }
+      if (degree > 100) {
+        if (Math.cos(rad10) >= 0 && Math.sin(rad10) >= 0) {
+          box10.position.x += 0.01;
+          box10.position.z -= 0.02;
+        }
+        if (Math.cos(rad10) < 0 && Math.sin(rad10) >= 0) {
+          box10.position.x -= 0.01;
+          box10.position.z -= 0.02;
+        }
+        if (Math.cos(rad10) < 0 && Math.sin(rad10) < 0) {
+          box10.position.x -= 0.01;
+          box10.position.z += 0.02;
+        }
+        if (Math.cos(rad10) >= 0 && Math.sin(rad10) < 0) {
+          box10.position.x += 0.01;
+          box10.position.z += 0.02;
+        }
+        degree10 += 1;
+      }
+      if (degree > 110) {
+        if (Math.cos(rad11) >= 0 && Math.sin(rad11) >= 0) {
+          box11.position.x += 0.01;
+          box11.position.z -= 0.02;
+        }
+        if (Math.cos(rad11) < 0 && Math.sin(rad11) >= 0) {
+          box11.position.x -= 0.01;
+          box11.position.z -= 0.02;
+        }
+        if (Math.cos(rad11) < 0 && Math.sin(rad11) < 0) {
+          box11.position.x -= 0.01;
+          box11.position.z += 0.02;
+        }
+        if (Math.cos(rad11) >= 0 && Math.sin(rad11) < 0) {
+          box11.position.x += 0.01;
+          box11.position.z += 0.02;
+        }
+        degree11 += 1;
+      }
+      if (degree > 120) {
+        if (Math.cos(rad12) >= 0 && Math.sin(rad12) >= 0) {
+          box12.position.x += 0.01;
+          box12.position.z -= 0.02;
+        }
+        if (Math.cos(rad12) < 0 && Math.sin(rad12) >= 0) {
+          box12.position.x -= 0.01;
+          box12.position.z -= 0.02;
+        }
+        if (Math.cos(rad12) < 0 && Math.sin(rad12) < 0) {
+          box12.position.x -= 0.01;
+          box12.position.z += 0.02;
+        }
+        if (Math.cos(rad12) >= 0 && Math.sin(rad12) < 0) {
+          box12.position.x += 0.01;
+          box12.position.z += 0.02;
+        }
+        degree12 += 1;
+      }
+      if (degree > 130) {
+        if (Math.cos(rad13) >= 0 && Math.sin(rad13) >= 0) {
+          box13.position.x += 0.01;
+          box13.position.z -= 0.02;
+        }
+        if (Math.cos(rad13) < 0 && Math.sin(rad13) >= 0) {
+          box13.position.x -= 0.01;
+          box13.position.z -= 0.02;
+        }
+        if (Math.cos(rad13) < 0 && Math.sin(rad13) < 0) {
+          box13.position.x -= 0.01;
+          box13.position.z += 0.02;
+        }
+        if (Math.cos(rad13) >= 0 && Math.sin(rad13) < 0) {
+          box13.position.x += 0.01;
+          box13.position.z += 0.02;
+        }
+        degree13 += 1;
+      }
+      if (degree > 140) {
+        if (Math.cos(rad14) >= 0 && Math.sin(rad14) >= 0) {
+          box14.position.x += 0.01;
+          box14.position.z -= 0.02;
+        }
+        if (Math.cos(rad14) < 0 && Math.sin(rad14) >= 0) {
+          box14.position.x -= 0.01;
+          box14.position.z -= 0.02;
+        }
+        if (Math.cos(rad14) < 0 && Math.sin(rad14) < 0) {
+          box14.position.x -= 0.01;
+          box14.position.z += 0.02;
+        }
+        if (Math.cos(rad14) >= 0 && Math.sin(rad14) < 0) {
+          box14.position.x += 0.01;
+          box14.position.z += 0.02;
+        }
+        degree14 += 1;
+      }
+      if (degree > 150) {
+        if (Math.cos(rad15) >= 0 && Math.sin(rad15) >= 0) {
+          box15.position.x += 0.01;
+          box15.position.z -= 0.02;
+        }
+        if (Math.cos(rad15) < 0 && Math.sin(rad15) >= 0) {
+          box15.position.x -= 0.01;
+          box15.position.z -= 0.02;
+        }
+        if (Math.cos(rad15) < 0 && Math.sin(rad15) < 0) {
+          box15.position.x -= 0.01;
+          box15.position.z += 0.02;
+        }
+        if (Math.cos(rad15) >= 0 && Math.sin(rad15) < 0) {
+          box15.position.x += 0.01;
+          box15.position.z += 0.02;
+        }
+        degree15 += 1;
+      }
+      if (degree > 160) {
+        if (Math.cos(rad16) >= 0 && Math.sin(rad16) >= 0) {
+          box16.position.x += 0.01;
+          box16.position.z -= 0.02;
+        }
+        if (Math.cos(rad16) < 0 && Math.sin(rad16) >= 0) {
+          box16.position.x -= 0.01;
+          box16.position.z -= 0.02;
+        }
+        if (Math.cos(rad16) < 0 && Math.sin(rad16) < 0) {
+          box16.position.x -= 0.01;
+          box16.position.z += 0.02;
+        }
+        if (Math.cos(rad16) >= 0 && Math.sin(rad16) < 0) {
+          box16.position.x += 0.01;
+          box16.position.z += 0.02;
+        }
+        degree16 += 1;
+      }
+      if (degree > 170) {
+        if (Math.cos(rad17) >= 0 && Math.sin(rad17) >= 0) {
+          box17.position.x += 0.01;
+          box17.position.z -= 0.02;
+        }
+        if (Math.cos(rad17) < 0 && Math.sin(rad17) >= 0) {
+          box17.position.x -= 0.01;
+          box17.position.z -= 0.02;
+        }
+        if (Math.cos(rad17) < 0 && Math.sin(rad17) < 0) {
+          box17.position.x -= 0.01;
+          box17.position.z += 0.02;
+        }
+        if (Math.cos(rad17) >= 0 && Math.sin(rad17) < 0) {
+          box17.position.x += 0.01;
+          box17.position.z += 0.02;
+        }
+        degree17 += 1;
+      }
+      if (degree > 180) {
+        if (Math.cos(rad18) >= 0 && Math.sin(rad18) >= 0) {
+          box18.position.x += 0.01;
+          box18.position.z -= 0.02;
+        }
+        if (Math.cos(rad18) < 0 && Math.sin(rad18) >= 0) {
+          box18.position.x -= 0.01;
+          box18.position.z -= 0.02;
+        }
+        if (Math.cos(rad18) < 0 && Math.sin(rad18) < 0) {
+          box18.position.x -= 0.01;
+          box18.position.z += 0.02;
+        }
+        if (Math.cos(rad18) >= 0 && Math.sin(rad18) < 0) {
+          box18.position.x += 0.01;
+          box18.position.z += 0.02;
+        }
+        degree18 += 1;
+      }
+      if (degree > 190) {
+        if (Math.cos(rad19) >= 0 && Math.sin(rad19) >= 0) {
+          box19.position.x += 0.01;
+          box19.position.z -= 0.02;
+        }
+        if (Math.cos(rad19) < 0 && Math.sin(rad19) >= 0) {
+          box19.position.x -= 0.01;
+          box19.position.z -= 0.02;
+        }
+        if (Math.cos(rad19) < 0 && Math.sin(rad19) < 0) {
+          box19.position.x -= 0.01;
+          box19.position.z += 0.02;
+        }
+        if (Math.cos(rad19) >= 0 && Math.sin(rad19) < 0) {
+          box19.position.x += 0.01;
+          box19.position.z += 0.02;
+        }
+        degree19 += 1;
+      }
+      if (degree > 200) {
+        if (Math.cos(rad20) >= 0 && Math.sin(rad20) >= 0) {
+          box20.position.x += 0.01;
+          box20.position.z -= 0.02;
+        }
+        if (Math.cos(rad20) < 0 && Math.sin(rad20) >= 0) {
+          box20.position.x -= 0.01;
+          box20.position.z -= 0.02;
+        }
+        if (Math.cos(rad20) < 0 && Math.sin(rad20) < 0) {
+          box20.position.x -= 0.01;
+          box20.position.z += 0.02;
+        }
+        if (Math.cos(rad20) >= 0 && Math.sin(rad20) < 0) {
+          box20.position.x += 0.01;
+          box20.position.z += 0.02;
+        }
+        degree20 += 1;
+      }
+      if (degree > 210) {
+        if (Math.cos(rad21) >= 0 && Math.sin(rad21) >= 0) {
+          box21.position.x += 0.01;
+          box21.position.z -= 0.02;
+        }
+        if (Math.cos(rad21) < 0 && Math.sin(rad21) >= 0) {
+          box21.position.x -= 0.01;
+          box21.position.z -= 0.02;
+        }
+        if (Math.cos(rad21) < 0 && Math.sin(rad21) < 0) {
+          box21.position.x -= 0.01;
+          box21.position.z += 0.02;
+        }
+        if (Math.cos(rad21) >= 0 && Math.sin(rad21) < 0) {
+          box21.position.x += 0.01;
+          box21.position.z += 0.02;
+        }
+        degree21 += 1;
+      }
+      if (degree > 220) {
+        if (Math.cos(rad22) >= 0 && Math.sin(rad22) >= 0) {
+          box22.position.x += 0.01;
+          box22.position.z -= 0.02;
+        }
+        if (Math.cos(rad22) < 0 && Math.sin(rad22) >= 0) {
+          box22.position.x -= 0.01;
+          box22.position.z -= 0.02;
+        }
+        if (Math.cos(rad22) < 0 && Math.sin(rad22) < 0) {
+          box22.position.x -= 0.01;
+          box22.position.z += 0.02;
+        }
+        if (Math.cos(rad22) >= 0 && Math.sin(rad22) < 0) {
+          box22.position.x += 0.01;
+          box22.position.z += 0.02;
+        }
+        degree22 += 1;
+      }
+      if (degree > 230) {
+        if (Math.cos(rad23) >= 0 && Math.sin(rad23) >= 0) {
+          box23.position.x += 0.01;
+          box23.position.z -= 0.02;
+        }
+        if (Math.cos(rad23) < 0 && Math.sin(rad23) >= 0) {
+          box23.position.x -= 0.01;
+          box23.position.z -= 0.02;
+        }
+        if (Math.cos(rad23) < 0 && Math.sin(rad23) < 0) {
+          box23.position.x -= 0.01;
+          box23.position.z += 0.02;
+        }
+        if (Math.cos(rad23) >= 0 && Math.sin(rad23) < 0) {
+          box23.position.x += 0.01;
+          box23.position.z += 0.02;
+        }
+        degree23 += 1;
+      }
+      if (degree > 240) {
+        if (Math.cos(rad24) >= 0 && Math.sin(rad24) >= 0) {
+          box24.position.x += 0.01;
+          box24.position.z -= 0.02;
+        }
+        if (Math.cos(rad24) < 0 && Math.sin(rad24) >= 0) {
+          box24.position.x -= 0.01;
+          box24.position.z -= 0.02;
+        }
+        if (Math.cos(rad24) < 0 && Math.sin(rad24) < 0) {
+          box24.position.x -= 0.01;
+          box24.position.z += 0.02;
+        }
+        if (Math.cos(rad24) >= 0 && Math.sin(rad24) < 0) {
+          box24.position.x += 0.01;
+          box24.position.z += 0.02;
+        }
+        degree24 += 1;
+      }
+      if (degree > 250) {
+        if (Math.cos(rad25) >= 0 && Math.sin(rad25) >= 0) {
+          box25.position.x += 0.01;
+          box25.position.z -= 0.02;
+        }
+        if (Math.cos(rad25) < 0 && Math.sin(rad25) >= 0) {
+          box25.position.x -= 0.01;
+          box25.position.z -= 0.02;
+        }
+        if (Math.cos(rad25) < 0 && Math.sin(rad25) < 0) {
+          box25.position.x -= 0.01;
+          box25.position.z += 0.02;
+        }
+        if (Math.cos(rad25) >= 0 && Math.sin(rad25) < 0) {
+          box25.position.x += 0.01;
+          box25.position.z += 0.02;
+        }
+        degree25 += 1;
+      }
+      if (degree > 260) {
+        if (Math.cos(rad26) >= 0 && Math.sin(rad26) >= 0) {
+          box26.position.x += 0.01;
+          box26.position.z -= 0.02;
+        }
+        if (Math.cos(rad26) < 0 && Math.sin(rad26) > 0) {
+          box26.position.x -= 0.01;
+          box26.position.z -= 0.02;
+        }
+        if (Math.cos(rad26) < 0 && Math.sin(rad26) < 0) {
+          box26.position.x -= 0.01;
+          box26.position.z += 0.02;
+        }
+        if (Math.cos(rad26) >= 0 && Math.sin(rad26) < 0) {
+          box26.position.x += 0.01;
+          box26.position.z += 0.02;
+        }
+        degree26 += 1;
+      }
+      if (degree > 270) {
+        if (Math.cos(rad27) >= 0 && Math.sin(rad27) >= 0) {
+          box27.position.x += 0.01;
+          box27.position.z -= 0.02;
+        }
+        if (Math.cos(rad27) < 0 && Math.sin(rad27) >= 0) {
+          box27.position.x -= 0.01;
+          box27.position.z -= 0.02;
+        }
+        if (Math.cos(rad27) < 0 && Math.sin(rad27) < 0) {
+          box27.position.x -= 0.01;
+          box27.position.z += 0.02;
+        }
+        if (Math.cos(rad27) >= 0 && Math.sin(rad27) < 0) {
+          box27.position.x += 0.01;
+          box27.position.z += 0.02;
+        }
+        degree27 += 1;
+      }
+      if (degree > 280) {
+        if (Math.cos(rad28) >= 0 && Math.sin(rad28) >= 0) {
+          box28.position.x += 0.01;
+          box28.position.z -= 0.02;
+        }
+        if (Math.cos(rad28) < 0 && Math.sin(rad28) >= 0) {
+          box28.position.x -= 0.01;
+          box28.position.z -= 0.02;
+        }
+        if (Math.cos(rad28) < 0 && Math.sin(rad28) < 0) {
+          box28.position.x -= 0.01;
+          box28.position.z += 0.02;
+        }
+        if (Math.cos(rad28) >= 0 && Math.sin(rad28) < 0) {
+          box28.position.x += 0.01;
+          box28.position.z += 0.02;
+        }
+        degree28 += 1;
+      }
+      if (degree > 290) {
+        if (Math.cos(rad29) >= 0 && Math.sin(rad29) >= 0) {
+          box29.position.x += 0.01;
+          box29.position.z -= 0.02;
+        }
+        if (Math.cos(rad29) < 0 && Math.sin(rad29) >= 0) {
+          box29.position.x -= 0.01;
+          box29.position.z -= 0.02;
+        }
+        if (Math.cos(rad29) < 0 && Math.sin(rad29) < 0) {
+          box29.position.x -= 0.01;
+          box29.position.z += 0.02;
+        }
+        if (Math.cos(rad29) >= 0 && Math.sin(rad29) < 0) {
+          box29.position.x += 0.01;
+          box29.position.z += 0.02;
+        }
+        degree29 += 1;
+      }
+      if (degree > 300) {
+        if (Math.cos(rad30) >= 0 && Math.sin(rad30) >= 0) {
+          box30.position.x += 0.01;
+          box30.position.z -= 0.02;
+        }
+        if (Math.cos(rad30) < 0 && Math.sin(rad30) >= 0) {
+          box30.position.x -= 0.01;
+          box30.position.z -= 0.02;
+        }
+        if (Math.cos(rad30) < 0 && Math.sin(rad30) < 0) {
+          box30.position.x -= 0.01;
+          box30.position.z += 0.02;
+        }
+        if (Math.cos(rad30) >= 0 && Math.sin(rad30) < 0) {
+          box30.position.x += 0.01;
+          box30.position.z += 0.02;
+        }
+        degree30 += 1;
+      }
+      if (degree > 310) {
+        if (Math.cos(rad31) >= 0 && Math.sin(rad31) >= 0) {
+          box31.position.x += 0.01;
+          box31.position.z -= 0.02;
+        }
+        if (Math.cos(rad31) < 0 && Math.sin(rad31) >= 0) {
+          box31.position.x -= 0.01;
+          box31.position.z -= 0.02;
+        }
+        if (Math.cos(rad31) < 0 && Math.sin(rad31) < 0) {
+          box31.position.x -= 0.01;
+          box31.position.z += 0.02;
+        }
+        if (Math.cos(rad31) >= 0 && Math.sin(rad31) < 0) {
+          box31.position.x += 0.01;
+          box31.position.z += 0.02;
+        }
+        degree31 += 1;
+      }
+      if (degree > 320) {
+        if (Math.cos(rad32) >= 0 && Math.sin(rad32) >= 0) {
+          box32.position.x += 0.01;
+          box32.position.z -= 0.02;
+        }
+        if (Math.cos(rad32) < 0 && Math.sin(rad32) >= 0) {
+          box32.position.x -= 0.01;
+          box32.position.z -= 0.02;
+        }
+        if (Math.cos(rad32) < 0 && Math.sin(rad32) < 0) {
+          box32.position.x -= 0.01;
+          box32.position.z += 0.02;
+        }
+        if (Math.cos(rad32) >= 0 && Math.sin(rad32) < 0) {
+          box32.position.x += 0.01;
+          box32.position.z += 0.02;
+        }
+        degree32 += 1;
+      }
+      if (degree > 330) {
+        if (Math.cos(rad33) >= 0 && Math.sin(rad33) >= 0) {
+          box33.position.x += 0.01;
+          box33.position.z -= 0.02;
+        }
+        if (Math.cos(rad33) < 0 && Math.sin(rad33) >= 0) {
+          box33.position.x -= 0.01;
+          box33.position.z -= 0.02;
+        }
+        if (Math.cos(rad33) < 0 && Math.sin(rad33) < 0) {
+          box33.position.x -= 0.01;
+          box33.position.z += 0.02;
+        }
+        if (Math.cos(rad33) >= 0 && Math.sin(rad33) < 0) {
+          box33.position.x += 0.01;
+          box33.position.z += 0.02;
+        }
+        degree33 += 1;
+      }
+      if (degree > 340) {
+        if (Math.cos(rad34) >= 0 && Math.sin(rad34) >= 0) {
+          box34.position.x += 0.01;
+          box34.position.z -= 0.02;
+        }
+        if (Math.cos(rad34) < 0 && Math.sin(rad34) >= 0) {
+          box34.position.x -= 0.01;
+          box34.position.z -= 0.02;
+        }
+        if (Math.cos(rad34) < 0 && Math.sin(rad34) < 0) {
+          box34.position.x -= 0.01;
+          box34.position.z += 0.02;
+        }
+        if (Math.cos(rad34) >= 0 && Math.sin(rad34) < 0) {
+          box34.position.x += 0.01;
+          box34.position.z += 0.02;
+        }
+        degree34 += 1;
+      }
+      if (degree > 350) {
+        if (Math.cos(rad35) >= 0 && Math.sin(rad35) >= 0) {
+          box35.position.x += 0.01;
+          box35.position.z -= 0.02;
+        }
+        if (Math.cos(rad35) < 0 && Math.sin(rad35) >= 0) {
+          box35.position.x -= 0.01;
+          box35.position.z -= 0.02;
+        }
+        if (Math.cos(rad35) < 0 && Math.sin(rad35) < 0) {
+          box35.position.x -= 0.01;
+          box35.position.z += 0.02;
+        }
+        if (Math.cos(rad35) >= 0 && Math.sin(rad35) < 0) {
+          box35.position.x += 0.01;
+          box35.position.z += 0.02;
+        }
+        degree35 += 1;
+      }
+      degree += 1;
+      //radius += 0.001;
+
+    }
+    animate();
+
+    // var delta = -0.01;
+    // setInterval(function () {
+    //   if (material.opacity < 0.0) {
+    //     delta = 0.01;
+    //   } else if (material.opacity > 1.0) {
+    //     delta = -0.01;
+    //   }
+    //   material.opacity += delta;
+    // }, 10);
+
+    renderer.setAnimationLoop((delta) => {
+      if (arToolkitSource.ready) {
+        arToolkitContext.update(arToolkitSource.domElement);
+      }
+
+      renderer.render(scene, camera);
+    });
+
+    function handleResize() {
+      if (arToolkitSource.ready) {
+        arToolkitSource.onResize();
+        arToolkitSource.copySizeTo(renderer.domElement);
+      }
+
+      renderer.setPixelRatio(window.devicePixelRatio);
+    }
+  </script>
+</body>
+
+</html>
